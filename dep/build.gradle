@@ -1,0 +1,25 @@
+buildscript {
+    ext.gdxVersion = "1.12.0"
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+}
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+
+dependencies {
+    implementation "com.mobidevelop.robovm:robovm-rt:2.3.21-SNAPSHOT"
+    implementation "com.mobidevelop.robovm:robovm-cocoatouch:2.3.21-SNAPSHOT"
+
+}

@@ -1,0 +1,36 @@
+buildscript {
+    ext.roboVMVersion = "2.3.21-SNAPSHOT"
+    ext.gdxVersion = "1.11.0"
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+    dependencies {
+        classpath "com.mobidevelop.robovm:robovm-gradle-plugin:${roboVMVersion}"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'robovm'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+robovm {
+}
+
+dependencies {
+    implementation project(":dep")
+
+    implementation "com.mobidevelop.robovm:robovm-rt:${roboVMVersion}"
+    implementation "com.mobidevelop.robovm:robovm-cocoatouch:${roboVMVersion}"
+
+    testImplementation "junit:junit:4.12"
+
+}
